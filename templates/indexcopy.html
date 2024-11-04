@@ -1,0 +1,27 @@
+<h1>Wiki Directory List</h1>
+<ul>
+    {{range .Pages}}
+        <li>
+            <a href="/view/{{.Title}}">{{.Title}}</a>
+        </li>
+    {{end}}
+</ul>
+
+
+<h2>Add Page to Wiki</h2>
+
+<form id="editForm" method="POST" onsubmit="setAction()">
+  <label for="title">New Title:</label><br>
+  <input type="text" id="title" name="title" required><br>
+  <div><input type="submit" value="Create New Page"></div>
+</form>
+
+<script>
+function setAction() {
+    // Get the value from the input field
+    const title = document.getElementById("title").value;
+
+    // Set the form action to include the new title
+    document.getElementById("editForm").action = `/edit/${title}`;
+}
+</script>

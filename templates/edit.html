@@ -1,0 +1,6 @@
+<h1>Editing {{ page.title }}</h1>
+
+<form action="/save/{{ page.title }}" method="POST">
+  <div><textarea name="page_content" rows="20" cols="80">{{ page.content }}</textarea></div>
+<div><input type="submit" value="Save"></div>
+</form>
